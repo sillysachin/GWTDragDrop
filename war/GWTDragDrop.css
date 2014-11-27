@@ -40,3 +40,8 @@ h1 {
 .cw-FlexTable-buttonPanel td {
   border: 0px;
 }
+
+.cw-DockLayoutPanel td {
+  border: 1px solid #BBBBBB;
+  padding: 3px;
+}
