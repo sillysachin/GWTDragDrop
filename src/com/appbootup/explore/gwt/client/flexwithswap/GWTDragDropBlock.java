@@ -1,4 +1,4 @@
-package com.appbootup.explore.gwt.client;
+package com.appbootup.explore.gwt.client.flexwithswap;
 
 import com.allen_sauer.gwt.dnd.client.DragEndEvent;
 import com.allen_sauer.gwt.dnd.client.DragHandler;

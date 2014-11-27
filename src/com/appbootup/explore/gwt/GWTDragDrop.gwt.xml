@@ -22,7 +22,8 @@
   <inherits name="com.google.gwt.user.Debug"/>,
 
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='com.appbootup.explore.gwt.client.GWTDragDropBlock'/>
+  <entry-point class='com.appbootup.explore.gwt.client.snaptogrid.GWTDragDropSnapToGrid'/>
+  <!-- <entry-point class='com.appbootup.explore.gwt.client.flexwithswap.GWTDragDropBlock'/> -->
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>

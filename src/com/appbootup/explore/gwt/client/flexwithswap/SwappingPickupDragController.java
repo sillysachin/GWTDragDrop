@@ -1,4 +1,4 @@
-package com.appbootup.explore.gwt.client;
+package com.appbootup.explore.gwt.client.flexwithswap;
 
 import java.util.HashMap;
 
