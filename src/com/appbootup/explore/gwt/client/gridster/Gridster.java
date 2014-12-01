@@ -96,6 +96,7 @@ public class Gridster extends ResizeComposite implements IJavaScriptWrapper<Grid
 						gridster.add_widget.apply(gridster, widget)
 					});
 				});
+		gridster.add_widget('<li >' + 11 + '</li>', 3, 3);
 		return gridster;
 	}-*/;
 
@@ -116,8 +117,8 @@ public class Gridster extends ResizeComposite implements IJavaScriptWrapper<Grid
 	public native void addWidget( String textContent, int col, int row )
 	/*-{
 		var gridster = this.@com.appbootup.explore.gwt.client.gridster.Gridster::jso;
-		gridster.add_widget('<li >' + textContent + '</li>', col,
-				row);
+		console.log(gridster);
+		gridster.add_widget('<li >' + textContent + '</li>', 3, 3);
 	}-*/;
 
 	public native void addWidget( String textContent )

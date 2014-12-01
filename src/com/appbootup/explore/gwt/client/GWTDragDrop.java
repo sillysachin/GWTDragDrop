@@ -23,6 +23,6 @@ public class GWTDragDrop implements EntryPoint
 //		gridster.addWidget( "<li>8</li>", 1, 1 );
 //		gridster.addWidget( "<li>9</li>", 2, 2 );
 //		gridster.addWidget( "<li>10</li>", 1, 3 );
-		gridster.addWidget( "<li>11</li>", 3, 2 );
+		gridster.addWidget( "<li>12</li>", 3, 2 );
 	}
 }
