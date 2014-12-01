@@ -3,9 +3,6 @@ package com.appbootup.explore.gwt.client.gridster;
 import java.util.List;
 import java.util.Map;
 
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.ValueAxis;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.IJavaScriptWrapper;
 import com.google.gwt.core.client.JavaScriptObject;

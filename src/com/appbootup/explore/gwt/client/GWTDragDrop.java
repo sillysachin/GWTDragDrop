@@ -11,5 +11,7 @@ public class GWTDragDrop implements EntryPoint
 	{
 		Gridster gridster = new Gridster();
 		RootLayoutPanel.get().add( gridster );
+		LogUtils.log( gridster.getJso() );
+		gridster.addWidget();
 	}
 }
