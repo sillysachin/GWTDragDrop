@@ -31,7 +31,7 @@ public class Gridster extends ResizeComposite implements IJavaScriptWrapper<Grid
 		divWidget.addStyleName( "gridster" );
 		ulWidget.addStyleName( "gridsterUl" );
 		divWidget.setHeight( "100%" );
-		divWidget.setWidth( "1024px" );
+		divWidget.setWidth( "1240px" );
 		divWidget.add( ulWidget );
 		divWrapper.add( divWidget );
 		initWidget( divWrapper );
@@ -85,7 +85,6 @@ public class Gridster extends ResizeComposite implements IJavaScriptWrapper<Grid
 						widget_base_dimensions : [ 100, 55 ]
 					}).data('gridster');
 					this.@com.appbootup.explore.gwt.client.gridster.Gridster::jso = gridster;
-
 					var widgets = [ [ '<li>0</li>', 1, 2 ],
 							[ '<li>1</li>', 3, 2 ], [ '<li>2</li>', 3, 2 ],
 							[ '<li>3</li>', 2, 1 ], [ '<li>4</li>', 4, 1 ],
@@ -96,7 +95,6 @@ public class Gridster extends ResizeComposite implements IJavaScriptWrapper<Grid
 					$wnd.$.each(widgets, function(i, widget) {
 						gridster.add_widget.apply(gridster, widget)
 					});
-
 				});
 		return gridster;
 	}-*/;
@@ -111,34 +109,25 @@ public class Gridster extends ResizeComposite implements IJavaScriptWrapper<Grid
 						widget_base_dimensions : [ 100, 55 ]
 					}).data('gridster');
 					this.@com.appbootup.explore.gwt.client.gridster.Gridster::jso = gridster;
-
-					var widgets = [ [ '<li>0</li>', 1, 2 ],
-							[ '<li>1</li>', 3, 2 ], [ '<li>2</li>', 3, 2 ],
-							[ '<li>3</li>', 2, 1 ], [ '<li>4</li>', 4, 1 ],
-							[ '<li>5</li>', 1, 2 ], [ '<li>6</li>', 2, 1 ],
-							[ '<li>7</li>', 3, 2 ], [ '<li>8</li>', 1, 1 ],
-							[ '<li>9</li>', 2, 2 ], [ '<li>10</li>', 1, 3 ] ];
-
-					$wnd.$.each(widgets, function(i, widget) {
-						gridster.add_widget.apply(gridster, widget)
-					});
-
 				});
 		return gridster;
 	}-*/;
 
-	public native void addWidget()
+	public native void addWidget( String textContent, int col, int row )
 	/*-{
-		//var gridster = @com.appbootup.explore.gwt.client.gridster.WrapperUtils::unwrap(Lcom/google/gwt/core/client/IJavaScriptWrapper;)(this);
 		var gridster = this.@com.appbootup.explore.gwt.client.gridster.Gridster::jso;
-		console.log(gridster);
-		gridster.add_widget(
-				'<li class="new">Damn, The HTML of the widget...</li>', 2, 1);
+		gridster.add_widget('<li >' + textContent + '</li>', col,
+				row);
+	}-*/;
+
+	public native void addWidget( String textContent )
+	/*-{
+		var gridster = this.@com.appbootup.explore.gwt.client.gridster.Gridster::jso;
+		gridster.add_widget('<li >' + textContent + '</li>');
 	}-*/;
 
 	public native void removeWidget()
 	/*-{
-		//var gridster = @com.appbootup.explore.gwt.client.gridster.WrapperUtils::unwrap(Lcom/google/gwt/core/client/IJavaScriptWrapper;)(this);
 		var gridster = this.@com.appbootup.explore.gwt.client.gridster.Gridster::jso;
 		gridster.remove_widget($('.gridster li').eq(3));
 	}-*/;
