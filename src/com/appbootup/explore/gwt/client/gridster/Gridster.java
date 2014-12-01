@@ -64,12 +64,11 @@ public class Gridster extends ResizeComposite implements IJavaScriptWrapper<Grid
 
 	protected static native GridsterJSO makeGridster( String id )
 	/*-{
-
 		var gridster;
 
-		$(function() {
+		$wnd.$(function() {
 
-			gridster = $(".gridster > ul").gridster({
+			gridster = $wnd.$(".gridster > ul").gridster({
 				widget_margins : [ 5, 5 ],
 				widget_base_dimensions : [ 100, 55 ]
 			}).data('gridster');
@@ -81,7 +80,7 @@ public class Gridster extends ResizeComposite implements IJavaScriptWrapper<Grid
 					[ '<li>8</li>', 1, 1 ], [ '<li>9</li>', 2, 2 ],
 					[ '<li>10</li>', 1, 3 ] ];
 
-			$.each(widgets, function(i, widget) {
+			$wnd.$.each(widgets, function(i, widget) {
 				gridster.add_widget.apply(gridster, widget)
 			});
 
