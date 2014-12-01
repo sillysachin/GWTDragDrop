@@ -1,4 +1,4 @@
-package com.appbootup.explore.gwt.client;
+package com.appbootup.explore.gwt.client.absolute;
 
 import com.allen_sauer.gwt.dnd.client.PickupDragController;
 import com.allen_sauer.gwt.dnd.client.drop.AbsolutePositionDropController;
@@ -7,6 +7,7 @@ import com.allen_sauer.gwt.dnd.client.util.DOMUtil;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Random;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
@@ -28,7 +29,7 @@ public class GWTDragDropFloat implements EntryPoint
 
 		// Create a drop target on which we can drop labels
 		AbsolutePanel targetPanel = new AbsolutePanel();
-		targetPanel.setPixelSize( 360, 225 );
+		targetPanel.setPixelSize( 900, 600 );
 		targetPanel.addStyleName( "getting-started-blue" );
 
 		// Add both panels to the root panel
@@ -64,9 +65,9 @@ public class GWTDragDropFloat implements EntryPoint
 			targetPanel.add( img, 0, 0 );
 
 			// determine random label location within target panel
-			int left = Random.nextInt( DOMUtil.getClientWidth( targetPanel.getElement() ) - img.getOffsetWidth() );
-			int top = Random.nextInt( DOMUtil.getClientHeight( targetPanel.getElement() ) - img.getOffsetHeight() );
-
+			int left = ( i % 3 ) * img.getOffsetWidth();
+			int top = ( i % 3 ) * img.getOffsetHeight();
+			Window.alert( left + "," + top );
 			// move the label
 			targetPanel.setWidgetPosition( img, left, top );
 

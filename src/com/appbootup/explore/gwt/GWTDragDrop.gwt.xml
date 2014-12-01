@@ -22,7 +22,9 @@
   <inherits name="com.google.gwt.user.Debug"/>,
 
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='com.appbootup.explore.gwt.client.snaptogrid.GWTDragDropMultisizeSnapToGrid'/>
+  <entry-point class='com.appbootup.explore.gwt.client.GWTDragDrop' />
+  <!-- <entry-point class='com.appbootup.explore.gwt.client.absolute.GWTDragDropFloat'/> -->
+  <!-- <entry-point class='com.appbootup.explore.gwt.client.snaptogrid.GWTDragDropMultisizeSnapToGrid'/> -->
   <!-- <entry-point class='com.appbootup.explore.gwt.client.snaptogrid.GWTDragDropSnapToGrid'/> -->
   <!-- <entry-point class='com.appbootup.explore.gwt.client.flexwithswap.GWTDragDropBlock'/> -->
 
