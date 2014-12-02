@@ -31,7 +31,7 @@ public class Gridster extends ResizeComposite implements IJavaScriptWrapper<Grid
 		divWidget.addStyleName( "gridster" );
 		ulWidget.addStyleName( "gridsterUl" );
 		divWidget.setHeight( "100%" );
-		divWidget.setWidth( "1240px" );
+		divWidget.setWidth( "900px" );
 		divWidget.add( ulWidget );
 		divWrapper.add( divWidget );
 		initWidget( divWrapper );
