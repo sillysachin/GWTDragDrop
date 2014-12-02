@@ -13,6 +13,8 @@ public class Gridster extends ResizeComposite implements IJavaScriptWrapper<Grid
 
 	private String id;
 
+	int counter;
+
 	private LayoutPanel divWrapper = new LayoutPanel();
 
 	private UnorderedListWidget ulWidget = new UnorderedListWidget();
@@ -103,28 +105,49 @@ public class Gridster extends ResizeComposite implements IJavaScriptWrapper<Grid
 						helper : 'clone',
 						resize : {
 							enabled : true
-						}
+						},
+						counter : 0
 					}).data('gridster');
 					this.@com.appbootup.explore.gwt.client.gridster.Gridster::jso = gridster;
 				});
 		return gridster;
 	}-*/;
 
-	public native void addWidget( String textContent, int col, int row )
+	public void addWidget( String textContent, int col, int row )
+	{
+		counter++;
+		addWidget( id + "-li-" + counter, textContent, col, row );
+	}
+
+	public native void addWidget( String id, String textContent, int col, int row )
 	/*-{
 		var gridster = this.@com.appbootup.explore.gwt.client.gridster.Gridster::jso;
-		gridster.add_widget('<li >' + textContent + '</li>', col, row);
+		var content = '<li id="' + id + '">' + textContent + '</li>'
+		gridster.add_widget(content, col, row);
 	}-*/;
 
-	public native void addWidget( String textContent )
+	public void addWidget( String textContent )
+	{
+		counter++;
+		addWidget( id + counter, textContent );
+	}
+
+	public native void addWidget( String id, String textContent )
 	/*-{
 		var gridster = this.@com.appbootup.explore.gwt.client.gridster.Gridster::jso;
-		gridster.add_widget('<li >' + textContent + '</li>');
+		var content = '<li id="' + id + '">' + textContent + '</li>';
+		gridster.add_widget(content);
 	}-*/;
 
-	public native void removeWidget()
+	public native void removeWidgetByIndex( int index )
 	/*-{
 		var gridster = this.@com.appbootup.explore.gwt.client.gridster.Gridster::jso;
-		gridster.remove_widget($('.gridster li').eq(3));
+		gridster.remove_widget($wnd.$('.gridster li').eq(index));
+	}-*/;
+
+	public native void removeWidgetById( String id )
+	/*-{
+		var gridster = this.@com.appbootup.explore.gwt.client.gridster.Gridster::jso;
+		gridster.remove_widget($wnd.$('.gridster li').eq(index));
 	}-*/;
 }

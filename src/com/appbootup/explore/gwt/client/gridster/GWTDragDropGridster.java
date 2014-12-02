@@ -23,7 +23,7 @@ public class GWTDragDropGridster implements EntryPoint
 
 		VerticalPanel vPanelPalette = new VerticalPanel();
 		vPanelPalette.add( new Label( "Palette" ) );
-
+		vPanelPalette.setSpacing( 10 );
 		final ListBox lBoxCharts = new ListBox();
 		lBoxCharts.addItem( "Column With Rotated Series", "chart01" );
 		lBoxCharts.addItem( "Column And Line Mix", "chart02" );
@@ -37,8 +37,12 @@ public class GWTDragDropGridster implements EntryPoint
 		vPanelPalette.add( lBoxCharts );
 
 		Button btnAdd = new Button( "Add" );
+		Button btnRemove = new Button( "Remove" );
+		FlowPanel btnWrapper = new FlowPanel();
 
-		vPanelPalette.add( btnAdd );
+		btnWrapper.add( btnAdd );
+		btnWrapper.add( btnRemove );
+		vPanelPalette.add( btnWrapper );
 
 		ScrollPanel sPanelPalette = new ScrollPanel();
 		sPanelPalette.setHeight( "100%" );
@@ -49,11 +53,11 @@ public class GWTDragDropGridster implements EntryPoint
 		final Gridster gridster = new Gridster();
 		//sPanelCanvas.add( gridsterWrapper );
 
-		splitLayoutPanelDashboard.addNorth( new Label( "North1" ), 50 );
-		splitLayoutPanelDashboard.addSouth( new Label( "South1" ), 50 );
-		splitLayoutPanelDashboard.addWest( sPanelPalette, 200 );
-		/*splitLayoutPanelDashboard.addNorth( new Label( "North2" ), 50 );*/
-		/*splitLayoutPanelDashboard.addSouth( new Label( "South2" ), 50 );*/
+		splitLayoutPanelDashboard.addNorth( new Label( "Title" ), 50 );
+		splitLayoutPanelDashboard.addSouth( new Label( "Footer" ), 50 );
+		splitLayoutPanelDashboard.addWest( sPanelPalette, 220 );
+		splitLayoutPanelDashboard.addNorth( new Label( "Subtitle" ), 50 );
+		splitLayoutPanelDashboard.addSouth( new Label( "Subfooter" ), 50 );
 		splitLayoutPanelDashboard.add( gridster );
 
 		btnAdd.addClickHandler( new ClickHandler()
@@ -63,6 +67,14 @@ public class GWTDragDropGridster implements EntryPoint
 			{
 				String selectedItemText = lBoxCharts.getSelectedItemText();
 				gridster.addWidget( selectedItemText );
+			}
+		} );
+		btnRemove.addClickHandler( new ClickHandler()
+		{
+			@Override
+			public void onClick( ClickEvent event )
+			{
+				gridster.removeWidgetByIndex( 0 );
 			}
 		} );
 
