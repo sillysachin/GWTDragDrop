@@ -79,10 +79,13 @@ public class Gridster extends ResizeComposite implements IJavaScriptWrapper<Grid
 
 		$wnd
 				.$(function() {
-
-					gridster = $wnd.$(".gridster > ul").gridster({
+					gridster = $wnd.$(".gridster ul").gridster({
+						widget_base_dimensions : [ 100, 55 ],
 						widget_margins : [ 5, 5 ],
-						widget_base_dimensions : [ 100, 55 ]
+						helper : 'clone',
+						resize : {
+							enabled : true
+						}
 					}).data('gridster');
 					this.@com.appbootup.explore.gwt.client.gridster.Gridster::jso = gridster;
 				});
@@ -94,9 +97,13 @@ public class Gridster extends ResizeComposite implements IJavaScriptWrapper<Grid
 		var gridster;
 		$wnd
 				.$(function() {
-					gridster = $wnd.$(".gridster > ul").gridster({
+					gridster = $wnd.$(".gridster ul").gridster({
+						widget_base_dimensions : [ 100, 55 ],
 						widget_margins : [ 5, 5 ],
-						widget_base_dimensions : [ 100, 55 ]
+						helper : 'clone',
+						resize : {
+							enabled : true
+						}
 					}).data('gridster');
 					this.@com.appbootup.explore.gwt.client.gridster.Gridster::jso = gridster;
 				});
