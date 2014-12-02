@@ -12,17 +12,16 @@ public class GWTDragDrop implements EntryPoint
 		Gridster gridster = new Gridster();
 		RootLayoutPanel.get().add( gridster );
 		LogUtils.log( gridster.getJso() );
-//		gridster.addWidget( "<li>0</li>", 1, 2 );
-//		gridster.addWidget( "<li>1</li>", 3, 2 );
-//		gridster.addWidget( "<li>2</li>", 3, 2 );
-//		gridster.addWidget( "<li>3</li>", 2, 1 );
-//		gridster.addWidget( "<li>4</li>", 4, 1 );
-//		gridster.addWidget( "<li>5</li>", 1, 2 );
-//		gridster.addWidget( "<li>6</li>", 2, 1 );
-//		gridster.addWidget( "<li>7</li>", 3, 2 );
-//		gridster.addWidget( "<li>8</li>", 1, 1 );
-//		gridster.addWidget( "<li>9</li>", 2, 2 );
-//		gridster.addWidget( "<li>10</li>", 1, 3 );
-		gridster.addWidget( "<li>12</li>", 3, 2 );
+		gridster.addWidget( "0", 1, 2 );
+		gridster.addWidget( "1", 3, 2 );
+		gridster.addWidget( "2", 3, 2 );
+		gridster.addWidget( "3", 2, 1 );
+		gridster.addWidget( "4", 4, 1 );
+		gridster.addWidget( "5", 1, 2 );
+		gridster.addWidget( "6", 2, 1 );
+		gridster.addWidget( "7", 3, 2 );
+		gridster.addWidget( "8", 1, 1 );
+		gridster.addWidget( "9", 2, 2 );
+		gridster.addWidget( "10", 1, 3 );
 	}
 }
